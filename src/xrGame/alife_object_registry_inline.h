@@ -7,6 +7,7 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
+#include "alife_object_registry.h"
 
 IC	void CALifeObjectRegistry::add		(CSE_ALifeDynamicObject *object)
 {

@@ -36,8 +36,8 @@ public:
 			bool				load_attach_position	(LPCSTR section);
 	virtual	void				afterAttach				();
 	virtual	void				afterDetach				();
-	IC		CInventoryItem		&item					() const;
-	IC		CPhysicsShellHolder	&object					() const;
+	IC		CInventoryItem& item() const;
+	CPhysicsShellHolder& object() const;
 	IC		shared_str			bone_name				() const;
 	IC		u16					bone_id					() const;
 	IC		void				set_bone_id				(u16 bone_id);

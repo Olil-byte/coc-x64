@@ -1,5 +1,6 @@
 #ifndef __Q__
 #define __Q__
+#include "_vector3d.h"
 
 /***************************************************************************
  The quatern module contains basic support for a quaternion object.
@@ -140,7 +141,7 @@
 #define QEPSILON    0.00001f
 
 template <class T>
-struct XRCORE_API _quaternion
+struct _quaternion
 {
 public:
     typedef T    TYPE;

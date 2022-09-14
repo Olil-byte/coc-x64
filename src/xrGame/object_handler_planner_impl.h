@@ -7,6 +7,7 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
+#include "object_handler_planner.h"
 
 IC	CObjectHandlerPlanner::_condition_type CObjectHandlerPlanner::uid(const u32 id0, const u32 id1) const
 {
@@ -14,7 +15,7 @@ IC	CObjectHandlerPlanner::_condition_type CObjectHandlerPlanner::uid(const u32 i
 	return				((id0 << 16) | id1);
 }
 
-IC	bool CObjectHandlerPlanner::object_action	(u32 action_id, CObject *object)
+IC	bool CObjectHandlerPlanner::object_action(_condition_type action_id, CObject* object)
 {
 	return				((action_id >> 16) == object->ID());
 }

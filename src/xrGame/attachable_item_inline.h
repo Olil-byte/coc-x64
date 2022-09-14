@@ -50,8 +50,8 @@ IC	bool CAttachableItem::enabled					() const
 	return				(m_enabled);
 }
 
-IC	CInventoryItem &CAttachableItem::item			() const
+IC CInventoryItem& CAttachableItem::item() const
 {
-	VERIFY				(m_item);
-	return				(*m_item);
+	VERIFY(m_item);
+	return (*m_item);
 }
