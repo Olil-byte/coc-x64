@@ -16,6 +16,10 @@
 #include "game_graph_space.h"
 #include "game_location_selector.h"
 
+#include "gameobject.h"
+#include "ai_space.h"
+#include "script_engine.h"
+
 enum EPdaMsg;
 enum ESoundTypes;
 enum ETaskState;
@@ -924,6 +928,8 @@ public:
 add_to_type_list(CScriptGameObject)
 #undef script_type_list
 #define script_type_list save_type_list(CScriptGameObject)
+
+#include "script_game_object_impl.h"
 
 extern void sell_condition	(CScriptIniFile *ini_file, LPCSTR section);
 extern void sell_condition	(float friend_factor, float enemy_factor);

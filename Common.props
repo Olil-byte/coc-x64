@@ -2,21 +2,22 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
-    <xrBinRootDir>$(SolutionDir)..\_build\bin\</xrBinRootDir>
-    <xrBinPlugRootDir>$(SolutionDir)..\_build\bin_plugs\</xrBinPlugRootDir>
-    <xrLibRootDir>$(SolutionDir)..\_build\lib\</xrLibRootDir>
-    <xrBinDir>$(xrBinRootDir)$(Configuration)\</xrBinDir>
+    <xrBinRootDir>$(SolutionDir)bin\</xrBinRootDir>
+    <xrBinPlugRootDir>$(SolutionDir)bin_plugs\</xrBinPlugRootDir>
+    <xrLibRootDir>$(SolutionDir)lib\</xrLibRootDir>
+    <xrBinDir>$(xrBinRootDir)$(Configuration)\$(Platform)\</xrBinDir>
     <xrBinPlugDir>$(xrBinPlugRootDir)$(Configuration)\</xrBinPlugDir>
-    <xrLibDir>$(xrLibRootDir)$(Configuration)\</xrLibDir>
-    <xrIntDir>$(SolutionDir)..\_build\intermediate\$(Configuration)\</xrIntDir>
-    <xrSdkDir>$(SolutionDir)..\sdk\</xrSdkDir>
-    <xrGameDir>$(SolutionDir)..\_build\_game\</xrGameDir>
+    <xrLibDir>$(xrLibRootDir)$(Configuration)\$(Platform)\</xrLibDir>
+    <xrIntDir>$(SolutionDir)intermediate\$(Configuration)\$(Platform)\</xrIntDir>
+    <xrSdkDir>$(SolutionDir)sdk\</xrSdkDir>
+    <xrGameDir>$(SolutionDir)game\</xrGameDir>
     <xrGameBinDir>$(xrGameDir)bin\</xrGameBinDir>
-    <xr3rdPartyDir>$(SolutionDir)3rd party\</xr3rdPartyDir>
+    <xr3rdPartyDir>$(SolutionDir)src\3rd party\</xr3rdPartyDir>
     <dxSdkDir>$(xrSdkDir)include\dxsdk\</dxSdkDir>
+    <xrSrcDir>$(SolutionDir)src\</xrSrcDir>
   </PropertyGroup>
   <PropertyGroup>
-    <IncludePath>$(SolutionDir)..\src\3rd party;$(IncludePath);$(xrSdkDir)include;$(xrSdkDir)include\OpenAutomate;$(xrSdkDir)include\nvapi;$(xrSdkDir)include\dxsdk</IncludePath>
+    <IncludePath>$(xr3rdPartyDir);$(IncludePath);$(xrSdkDir)include;$(xrSdkDir)include\OpenAutomate;$(xrSdkDir)include\nvapi;$(xrSdkDir)include\dxsdk</IncludePath>
     <OutDir>$(xrGameDir)bin_dbg\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup>
@@ -83,6 +84,10 @@
     </BuildMacro>
     <BuildMacro Include="dxSdkDir">
       <Value>$(dxSdkDir)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="xrSrcDir">
+      <Value>$(xrSrcDir)</Value>
       <EnvironmentVariable>true</EnvironmentVariable>
     </BuildMacro>
   </ItemGroup>

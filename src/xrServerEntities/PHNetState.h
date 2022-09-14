@@ -1,6 +1,8 @@
 #ifndef  PHNETSTATE_H
 #define  PHNETSTATE_H
 
+#include "../xrCore/_quaternion.h"
+
 class NET_Packet;
 
 struct SPHNetState

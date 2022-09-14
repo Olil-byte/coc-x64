@@ -35,7 +35,7 @@
 #include "PHElementInline.h"
 #include "PhysicsShellAnimator.h"
 #include "phshellbuildjoint.h"
-#include <boost/noncopyable.hpp>
+#include "boost/noncopyable.hpp"
 #ifdef DEBUG
 #include    "debug_output.h"
 #endif
@@ -998,7 +998,7 @@ void CPHShell::EnabledCallbacks(BOOL val)
 
 
 template< typename T>
-void for_each_bone_id( IKinematics &K, T op )
+void for_each_bone_id( IKinematics &K, T& op )
 {
     u16 bn =  K.LL_BoneCount();
     for(u16 i = 0; i < bn; ++i )

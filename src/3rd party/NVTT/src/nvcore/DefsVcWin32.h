@@ -18,7 +18,9 @@
 #define NV_CONST
 
 // Set standard function names.
-#define snprintf _snprintf
+#if _MSC_VER < 1900 //vs2015 already have this function
+#define snprintf _snprintf_s 
+#endif
 #if _MSC_VER < 1500
 #	define vsnprintf _vsnprintf
 #endif

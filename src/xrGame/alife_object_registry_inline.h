@@ -6,7 +6,7 @@
 //	Description : ALife object registry inline functions
 ////////////////////////////////////////////////////////////////////////////
 
-#pragma once
+#pragma oncea
 
 IC	void CALifeObjectRegistry::add		(CSE_ALifeDynamicObject *object)
 {
