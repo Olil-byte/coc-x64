@@ -18,7 +18,10 @@
 	CAttachableItem*	CAttachableItem::m_dbgItem = NULL;
 #endif
 
-CPhysicsShellHolder& CAttachableItem::object() const { return (item().object()); }
+CPhysicsShellHolder& CAttachableItem::object() const 
+{ 
+	return (item().object()); 
+}
 
 DLL_Pure *CAttachableItem::_construct	()
 {

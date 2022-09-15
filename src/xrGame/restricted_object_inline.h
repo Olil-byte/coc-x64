@@ -7,7 +7,6 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
-#include "restricted_object.h"
 
 IC	CRestrictedObject::CRestrictedObject		(CCustomMonster *object)
 {

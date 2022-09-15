@@ -18,74 +18,74 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lw", "lw", "{AB0D87B3-0937-
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "editor", "editor", "{2DDE8FE4-6490-4AC5-B020-7E6A203F6318}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ode", "3rd party\ode\contrib\msvc7\ode_default\default.vcxproj", "{1BF75FEB-87DD-486C-880B-227987D191C2}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ode", "src\3rd party\ode\contrib\msvc7\ode_default\default.vcxproj", "{1BF75FEB-87DD-486C-880B-227987D191C2}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OpenAL32", "3rd party\openal\OpenAL-Windows\Router\Router.vcxproj", "{566551F4-4EF1-4CB4-A131-F982E7606907}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OpenAL32", "src\3rd party\openal\OpenAL-Windows\Router\Router.vcxproj", "{566551F4-4EF1-4CB4-A131-F982E7606907}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrD3D9-Null", "xrD3D9-Null\xrD3D9-Null.vcxproj", "{0899B131-F1D4-4876-9BA1-67AC821DB9E1}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrD3D9-Null", "src\xrD3D9-Null\xrD3D9-Null.vcxproj", "{0899B131-F1D4-4876-9BA1-67AC821DB9E1}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrCoreStatic", "xrCore\xrCoreStatic.vcxproj", "{F1066EAC-EE25-4C7A-9023-5957A6F7BA27}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrCoreStatic", "src\xrCore\xrCoreStatic.vcxproj", "{F1066EAC-EE25-4C7A-9023-5957A6F7BA27}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CompressionTest", "utils\CompressionTest\CompressionTest.vcxproj", "{C961EA19-716C-4A6D-BB13-689F8FB78B01}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CompressionTest", "src\utils\CompressionTest\CompressionTest.vcxproj", "{C961EA19-716C-4A6D-BB13-689F8FB78B01}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ctool", "utils\ctool\ctool.vcxproj", "{2FAAC8BA-369F-465E-B465-2235963FD377}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ctool", "src\utils\ctool\ctool.vcxproj", "{2FAAC8BA-369F-465E-B465-2235963FD377}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ETools", "utils\ETools\ETools.vcxproj", "{65CBB9D0-FBC6-41A4-8316-F5E9B5D7FB33}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ETools", "src\utils\ETools\ETools.vcxproj", "{65CBB9D0-FBC6-41A4-8316-F5E9B5D7FB33}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LWO", "utils\LWO\LWO.vcxproj", "{A6EBBBBB-5FEF-4C20-8460-DFAB11734DED}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LWO", "src\utils\LWO\LWO.vcxproj", "{A6EBBBBB-5FEF-4C20-8460-DFAB11734DED}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrAI", "utils\xrAI\xrAI.vcxproj", "{EA5932F3-02FE-4AD3-89E8-7072DC465D25}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrAI", "src\utils\xrAI\xrAI.vcxproj", "{EA5932F3-02FE-4AD3-89E8-7072DC465D25}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrCompress", "utils\xrCompress\xrCompress.vcxproj", "{EF76867B-6EB8-4DC0-A1D6-E964FAD6FC7B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrCompress", "src\utils\xrCompress\xrCompress.vcxproj", "{EF76867B-6EB8-4DC0-A1D6-E964FAD6FC7B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrDO_Light", "utils\xrDO_Light\xrDO_Light.vcxproj", "{B730F54D-1199-481A-AAD0-5DB684E067C0}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrDO_Light", "src\utils\xrDO_Light\xrDO_Light.vcxproj", "{B730F54D-1199-481A-AAD0-5DB684E067C0}"
 	ProjectSection(ProjectDependencies) = postProject
 		{A0F7D1FB-59A7-4717-A7E4-96F37E91998E} = {A0F7D1FB-59A7-4717-A7E4-96F37E91998E}
 		{A19B1DF2-82EC-4364-8BDF-85D13A1C89B5} = {A19B1DF2-82EC-4364-8BDF-85D13A1C89B5}
 		{EFB76D6F-0092-439C-A783-C0BE10BD17C9} = {EFB76D6F-0092-439C-A783-C0BE10BD17C9}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DXT", "utils\xrDXT\DXT.vcxproj", "{EBF9B543-0830-4866-9B48-DC0740E87E8A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DXT", "src\utils\xrDXT\DXT.vcxproj", "{EBF9B543-0830-4866-9B48-DC0740E87E8A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrLC", "utils\xrLC\xrLC.vcxproj", "{A4ABD75E-825B-4D09-B3B2-2709682E40C8}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrLC", "src\utils\xrLC\xrLC.vcxproj", "{A4ABD75E-825B-4D09-B3B2-2709682E40C8}"
 	ProjectSection(ProjectDependencies) = postProject
 		{EFB76D6F-0092-439C-A783-C0BE10BD17C9} = {EFB76D6F-0092-439C-A783-C0BE10BD17C9}
 		{F1836CE2-59EF-4189-8B9C-D103A511CB27} = {F1836CE2-59EF-4189-8B9C-D103A511CB27}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrQSlim", "utils\xrQSlim\xrQSlim.vcxproj", "{F1836CE2-59EF-4189-8B9C-D103A511CB27}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrQSlim", "src\utils\xrQSlim\xrQSlim.vcxproj", "{F1836CE2-59EF-4189-8B9C-D103A511CB27}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrSE_Factory", "utils\xrSE_Factory\xrSE_Factory.vcxproj", "{3AD26FD3-4F52-4E22-A4CF-AD4C49E74C61}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrSE_Factory", "src\utils\xrSE_Factory\xrSE_Factory.vcxproj", "{3AD26FD3-4F52-4E22-A4CF-AD4C49E74C61}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrCDB", "xrCDB\xrCDB.vcxproj", "{A19B1DF2-82EC-4364-8BDF-85D13A1C89B5}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrCDB", "src\xrCDB\xrCDB.vcxproj", "{A19B1DF2-82EC-4364-8BDF-85D13A1C89B5}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrCore", "xrCore\xrCore.vcxproj", "{A0F7D1FB-59A7-4717-A7E4-96F37E91998E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrCore", "src\xrCore\xrCore.vcxproj", "{A0F7D1FB-59A7-4717-A7E4-96F37E91998E}"
 	ProjectSection(ProjectDependencies) = postProject
 		{772FE450-F4F3-4687-A2A7-5624825089D7} = {772FE450-F4F3-4687-A2A7-5624825089D7}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrCPU_Pipe", "xrCPU_Pipe\xrCPU_Pipe.vcxproj", "{CA0649DD-D089-423A-981C-46B57A884EB9}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrCPU_Pipe", "src\xrCPU_Pipe\xrCPU_Pipe.vcxproj", "{CA0649DD-D089-423A-981C-46B57A884EB9}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrGame", "xrGame\xrGame.vcxproj", "{200652A6-043E-4634-8837-87983B3BD5E0}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrGame", "src\xrGame\xrGame.vcxproj", "{200652A6-043E-4634-8837-87983B3BD5E0}"
 	ProjectSection(ProjectDependencies) = postProject
 		{880CD250-BA77-4DAF-A8D4-552F12DD3AE4} = {880CD250-BA77-4DAF-A8D4-552F12DD3AE4}
 		{938C5808-85A1-4B5A-8CB4-D2D9D7851CB8} = {938C5808-85A1-4B5A-8CB4-D2D9D7851CB8}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrGameSpy", "xrGameSpy\xrGameSpy.vcxproj", "{5535F6B4-7AE6-4B66-8AEA-CC31C14D7AB7}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrGameSpy", "src\xrGameSpy\xrGameSpy.vcxproj", "{5535F6B4-7AE6-4B66-8AEA-CC31C14D7AB7}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrNetServer", "xrNetServer\xrNetServer.vcxproj", "{435BAC9A-B225-457D-AB40-C9BD0CC8838C}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrNetServer", "src\xrNetServer\xrNetServer.vcxproj", "{435BAC9A-B225-457D-AB40-C9BD0CC8838C}"
 	ProjectSection(ProjectDependencies) = postProject
 		{772FE450-F4F3-4687-A2A7-5624825089D7} = {772FE450-F4F3-4687-A2A7-5624825089D7}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrParticles", "xrParticles\xrParticles.vcxproj", "{94A1C366-3D19-48E6-8170-4ADC2E70DF97}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrParticles", "src\xrParticles\xrParticles.vcxproj", "{94A1C366-3D19-48E6-8170-4ADC2E70DF97}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrRender_R1", "Layers\xrRenderPC_R1\xrRender_R1.vcxproj", "{57A498C9-A741-4DDF-8EFC-BFB9EB6B00E2}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrRender_R1", "src\Layers\xrRenderPC_R1\xrRender_R1.vcxproj", "{57A498C9-A741-4DDF-8EFC-BFB9EB6B00E2}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrRender_R2", "Layers\xrRenderPC_R2\xrRender_R2.vcxproj", "{963BA4E5-499A-454D-B002-1D5ECE0527A6}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrRender_R2", "src\Layers\xrRenderPC_R2\xrRender_R2.vcxproj", "{963BA4E5-499A-454D-B002-1D5ECE0527A6}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrSound", "xrSound\xrSound.vcxproj", "{CCCA7859-EB86-493E-9B53-C4235F45B3C5}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrSound", "src\xrSound\xrSound.vcxproj", "{CCCA7859-EB86-493E-9B53-C4235F45B3C5}"
 	ProjectSection(ProjectDependencies) = postProject
 		{3A214E06-B95E-4D61-A291-1F8DF2EC10FD} = {3A214E06-B95E-4D61-A291-1F8DF2EC10FD}
 		{566551F4-4EF1-4CB4-A131-F982E7606907} = {566551F4-4EF1-4CB4-A131-F982E7606907}
@@ -93,31 +93,31 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrSound", "xrSound\xrSound.
 		{CEBDE98B-A6AA-46E6-BC79-FAAF823DB9EC} = {CEBDE98B-A6AA-46E6-BC79-FAAF823DB9EC}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrXMLParser", "xrXMLParser\xrXMLParser.vcxproj", "{94A1C366-3D19-48E6-8170-4ADC2E70DF98}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrXMLParser", "src\xrXMLParser\xrXMLParser.vcxproj", "{94A1C366-3D19-48E6-8170-4ADC2E70DF98}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LW_Export_80", "plugins\lw\LW_Export80.vcxproj", "{F573DE85-0866-4775-955F-6C3241D2AE80}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LW_Export_80", "src\plugins\lw\LW_Export80.vcxproj", "{F573DE85-0866-4775-955F-6C3241D2AE80}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LW_Server", "plugins\lw\LW_Server.vcxproj", "{6BA3121A-ACBC-4685-9246-4549CA1EFFFD}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LW_Server", "src\plugins\lw\LW_Server.vcxproj", "{6BA3121A-ACBC-4685-9246-4549CA1EFFFD}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LW_Shader_80", "plugins\lw\LW_Shader80.vcxproj", "{39EE310B-4F1D-4716-A39F-4AB844DB3680}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LW_Shader_80", "src\plugins\lw\LW_Shader80.vcxproj", "{39EE310B-4F1D-4716-A39F-4AB844DB3680}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Max_Export_60", "plugins\Max\MAX_Export60.vcxproj", "{93AD3B7E-71DE-4FA2-90E7-A79782ED4960}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Max_Export_60", "src\plugins\Max\MAX_Export60.vcxproj", "{93AD3B7E-71DE-4FA2-90E7-A79782ED4960}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Max_Material_60", "plugins\Max\MAX_Material60.vcxproj", "{56AD8F54-F89E-4B5A-93F8-8A617BFD1160}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Max_Material_60", "src\plugins\Max\MAX_Material60.vcxproj", "{56AD8F54-F89E-4B5A-93F8-8A617BFD1160}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Maya_Export_2008", "plugins\Maya\Maya_Export2008.vcxproj", "{C928FBB1-EDD8-4198-90DC-170A54C2AD72}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Maya_Export_2008", "src\plugins\Maya\Maya_Export2008.vcxproj", "{C928FBB1-EDD8-4198-90DC-170A54C2AD72}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Maya_Material_2008", "plugins\Maya\Maya_Material2008.vcxproj", "{84D91673-C1A1-47FF-9A75-4E73F31F4C63}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Maya_Material_2008", "src\plugins\Maya\Maya_Material2008.vcxproj", "{84D91673-C1A1-47FF-9A75-4E73F31F4C63}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrAPI", "Layers\xrAPI\xrAPI.vcxproj", "{1DAEC516-E52C-4A3C-A4DA-AE3553E6E0F8}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrAPI", "src\Layers\xrAPI\xrAPI.vcxproj", "{1DAEC516-E52C-4A3C-A4DA-AE3553E6E0F8}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrRender_R3", "Layers\xrRenderPC_R3\xrRender_R3.vcxproj", "{3F383D3C-FCD8-4170-990B-EB4833F09248}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrRender_R3", "src\Layers\xrRenderPC_R3\xrRender_R3.vcxproj", "{3F383D3C-FCD8-4170-990B-EB4833F09248}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "editor", "editor\editor.vcxproj", "{492D3DFE-9068-4E7E-A008-7C2420A651C0}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "editor", "src\editor\editor.vcxproj", "{492D3DFE-9068-4E7E-A008-7C2420A651C0}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "editor_controls", "editor_controls\editor_controls.vcxproj", "{B45374AA-C7ED-42CF-BBD3-DEAA2B7ACB48}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "editor_controls", "src\editor_controls\editor_controls.vcxproj", "{B45374AA-C7ED-42CF-BBD3-DEAA2B7ACB48}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrEngine", "xrEngine\xrEngine.vcxproj", "{2578C6D8-660D-48AE-9322-7422F8664F06}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrEngine", "src\xrEngine\xrEngine.vcxproj", "{2578C6D8-660D-48AE-9322-7422F8664F06}"
 	ProjectSection(ProjectDependencies) = postProject
 		{0BDF3377-F84E-4B42-A605-B45AAA244CB6} = {0BDF3377-F84E-4B42-A605-B45AAA244CB6}
 		{3A214E06-B95E-4D61-A291-1F8DF2EC10FD} = {3A214E06-B95E-4D61-A291-1F8DF2EC10FD}
@@ -126,56 +126,56 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrEngine", "xrEngine\xrEngi
 		{CEBDE98B-A6AA-46E6-BC79-FAAF823DB9EC} = {CEBDE98B-A6AA-46E6-BC79-FAAF823DB9EC}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "luabind.beta7-devel.rc4", "3rd party\luabind\luabind.beta7-devel.rc4.vcxproj", "{CC52E0B3-CC35-4934-9302-035B748F3F2C}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "luabind.beta7-devel.rc4", "src\3rd party\luabind\luabind.beta7-devel.rc4.vcxproj", "{CC52E0B3-CC35-4934-9302-035B748F3F2C}"
 	ProjectSection(ProjectDependencies) = postProject
 		{632AEEB6-DC06-4E15-9551-B2B09A4B73C5} = {632AEEB6-DC06-4E15-9551-B2B09A4B73C5}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrLC_Light", "utils\xrLC_Light\xrLC_Light.vcxproj", "{EFB76D6F-0092-439C-A783-C0BE10BD17C9}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrLC_Light", "src\utils\xrLC_Light\xrLC_Light.vcxproj", "{EFB76D6F-0092-439C-A783-C0BE10BD17C9}"
 	ProjectSection(ProjectDependencies) = postProject
 		{EBF9B543-0830-4866-9B48-DC0740E87E8A} = {EBF9B543-0830-4866-9B48-DC0740E87E8A}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrLC_LightStab", "utils\xrLC_LightStab\xrLC_LightStab.vcxproj", "{EC924B9B-4991-4931-8623-E1DB9AE005CA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrLC_LightStab", "src\utils\xrLC_LightStab\xrLC_LightStab.vcxproj", "{EC924B9B-4991-4931-8623-E1DB9AE005CA}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrPhysics", "xrPhysics\xrPhysics.vcxproj", "{98D24A3D-7666-4C11-9D6E-B10393CE8CBA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrPhysics", "src\xrPhysics\xrPhysics.vcxproj", "{98D24A3D-7666-4C11-9D6E-B10393CE8CBA}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Maya_Export_2009", "plugins\Maya\Maya_Export2009.vcxproj", "{E5F40F9E-C01B-4B97-9BD5-FC24308D8022}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Maya_Export_2009", "src\plugins\Maya\Maya_Export2009.vcxproj", "{E5F40F9E-C01B-4B97-9BD5-FC24308D8022}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Maya_Material_2009", "plugins\Maya\Maya_Material2009.vcxproj", "{FFDF27A8-C198-49ED-BA13-4DA9054266C6}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Maya_Material_2009", "src\plugins\Maya\Maya_Material2009.vcxproj", "{FFDF27A8-C198-49ED-BA13-4DA9054266C6}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "crypto", "3rd party\crypto\crypto.vcxproj", "{FA169092-EA3E-40C1-8E5A-A2B575700FE8}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "crypto", "src\3rd party\crypto\crypto.vcxproj", "{FA169092-EA3E-40C1-8E5A-A2B575700FE8}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrRender_R4", "Layers\xrRenderPC_R4\xrRender_R4.vcxproj", "{AC9B12ED-A2D7-4337-A981-5BD8430E96D8}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xrRender_R4", "src\Layers\xrRenderPC_R4\xrRender_R4.vcxproj", "{AC9B12ED-A2D7-4337-A981-5BD8430E96D8}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mp_screenshots_info", "utils\mp_screenshots_info\mp_screenshots_info.vcxproj", "{032A10AB-E44C-4751-A290-001EF99E664A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mp_screenshots_info", "src\utils\mp_screenshots_info\mp_screenshots_info.vcxproj", "{032A10AB-E44C-4751-A290-001EF99E664A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mp_configs_verifyer", "utils\mp_configs_verifyer\mp_configs_verifyer.vcxproj", "{1924EF23-A05E-40E5-93F2-6CCD64BE1F8B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mp_configs_verifyer", "src\utils\mp_configs_verifyer\mp_configs_verifyer.vcxproj", "{1924EF23-A05E-40E5-93F2-6CCD64BE1F8B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CxImage", "3rd party\cximage\cximage.vcxproj", "{880CD250-BA77-4DAF-A8D4-552F12DD3AE4}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CxImage", "src\3rd party\cximage\cximage.vcxproj", "{880CD250-BA77-4DAF-A8D4-552F12DD3AE4}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NVTT", "3rd party\NVTT\NVTT.vcxproj", "{0EB257DC-5CFC-44B0-82C9-CE6B158BE473}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NVTT", "src\3rd party\NVTT\NVTT.vcxproj", "{0EB257DC-5CFC-44B0-82C9-CE6B158BE473}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lua_extensions", "3rd party\lua-extensions\lua_extensions.vcxproj", "{44F716E7-05BD-4390-AB02-5F7DAF7FEFDE}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lua_extensions", "src\3rd party\lua-extensions\lua_extensions.vcxproj", "{44F716E7-05BD-4390-AB02-5F7DAF7FEFDE}"
 	ProjectSection(ProjectDependencies) = postProject
 		{632AEEB6-DC06-4E15-9551-B2B09A4B73C5} = {632AEEB6-DC06-4E15-9551-B2B09A4B73C5}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libjpeg", "..\sdk\include\jpeg\vs2013\libjpeg.vcxproj", "{938C5808-85A1-4B5A-8CB4-D2D9D7851CB8}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libjpeg", "sdk\include\jpeg\vs2013\libjpeg.vcxproj", "{938C5808-85A1-4B5A-8CB4-D2D9D7851CB8}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libogg_static", "..\sdk\include\ogg\vs2013\libogg_static.vcxproj", "{893887A1-3ABF-40A0-B931-CD0867010785}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libogg_static", "sdk\include\ogg\vs2013\libogg_static.vcxproj", "{893887A1-3ABF-40A0-B931-CD0867010785}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libtheora_static", "..\sdk\include\theora\vs2013\libtheora_static.vcxproj", "{0BDF3377-F84E-4B42-A605-B45AAA244CB6}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libtheora_static", "sdk\include\theora\vs2013\libtheora_static.vcxproj", "{0BDF3377-F84E-4B42-A605-B45AAA244CB6}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libvorbis_static", "..\sdk\include\vorbis\vs2013\libvorbis_static.vcxproj", "{3A214E06-B95E-4D61-A291-1F8DF2EC10FD}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libvorbis_static", "sdk\include\vorbis\vs2013\libvorbis_static.vcxproj", "{3A214E06-B95E-4D61-A291-1F8DF2EC10FD}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libvorbisfile_static", "..\sdk\include\vorbis\vs2013\libvorbisfile_static.vcxproj", "{CEBDE98B-A6AA-46E6-BC79-FAAF823DB9EC}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libvorbisfile_static", "sdk\include\vorbis\vs2013\libvorbisfile_static.vcxproj", "{CEBDE98B-A6AA-46E6-BC79-FAAF823DB9EC}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "oalib", "..\sdk\include\OpenAutomate\vs2013\oalib.vcxproj", "{61D4856F-FA82-4F02-BB88-909DDFB1FE74}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "oalib", "sdk\include\OpenAutomate\vs2013\oalib.vcxproj", "{61D4856F-FA82-4F02-BB88-909DDFB1FE74}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LuaJIT-2", "3rd party\luajit-2\src\luajit.vcxproj", "{632AEEB6-DC06-4E15-9551-B2B09A4B73C5}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LuaJIT-2", "src\3rd party\luajit-2\src\luajit.vcxproj", "{632AEEB6-DC06-4E15-9551-B2B09A4B73C5}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DXERR", "3rd party\DXERR\DXERR.vcxproj", "{772FE450-F4F3-4687-A2A7-5624825089D7}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DXERR", "src\3rd party\DXERR\DXERR.vcxproj", "{772FE450-F4F3-4687-A2A7-5624825089D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

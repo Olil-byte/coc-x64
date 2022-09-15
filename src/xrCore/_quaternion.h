@@ -1,6 +1,6 @@
+#pragma once
 #ifndef __Q__
 #define __Q__
-#include "_vector3d.h"
 
 /***************************************************************************
  The quatern module contains basic support for a quaternion object.

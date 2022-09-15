@@ -7,7 +7,6 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #pragma once
-#include "object_handler_planner.h"
 
 IC	CObjectHandlerPlanner::_condition_type CObjectHandlerPlanner::uid(const u32 id0, const u32 id1) const
 {
