@@ -13,6 +13,7 @@
     <xrGameDir>$(SolutionDir)game\</xrGameDir>
     <xrGameBinDir>$(xrGameDir)bin\</xrGameBinDir>
     <xr3rdPartyDir>$(SolutionDir)src\3rd party\</xr3rdPartyDir>
+	<xrExternalsDir>$(SolutionDir)externals\</xrExternalsDir>
     <dxSdkDir>$(xrSdkDir)include\dxsdk\</dxSdkDir>
     <xrSrcDir>$(SolutionDir)src\</xrSrcDir>
   </PropertyGroup>

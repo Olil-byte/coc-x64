@@ -1,0 +1,4 @@
+
+[submodule "externals/LuaJIT"]
+	path = externals/LuaJIT
+	url = https://github.com/OpenXRay/LuaJIT.git
