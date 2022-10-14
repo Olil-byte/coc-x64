@@ -96,6 +96,7 @@
 #	include "weaponBM16.h"
 #	include "weaponRG6.h"
 #	include "WeaponStatMgun.h"
+#	include "WeaponDP28.h"
 
 #	include "scope.h"
 #	include "silencer.h"
@@ -320,6 +321,7 @@ void CObjectFactory::register_classes	()
 	ADD(CWeaponKnife			,CSE_ALifeItemWeapon			,CLSID_OBJECT_W_KNIFE			,"wpn_knife");
 	ADD(CWeaponBM16				,CSE_ALifeItemWeaponShotGun		,CLSID_OBJECT_W_BM16			,"wpn_bm16");
 	ADD(CWeaponRG6				,CSE_ALifeItemWeaponShotGun		,CLSID_OBJECT_W_RG6				,"wpn_rg6");
+	ADD(CWeaponDP28, CSE_ALifeItemWeaponMagazined, CLSID_OBJECT_W_DP28, "wpn_dp28");
 	//-----------------------------------------------------------------------------------------------------
 	ADD(CWeaponAmmo				,CSE_ALifeItemAmmo				,CLSID_OBJECT_AMMO				,"wpn_ammo");
 	ADD(CWeaponAmmo				,CSE_ALifeItemAmmo				,CLSID_OBJECT_A_VOG25			,"wpn_ammo_vog25");
@@ -448,6 +450,9 @@ void CObjectFactory::register_classes	()
 	ADD(CWeaponVal				,CSE_ALifeItemWeaponMagazined	,TEXT2CLSID("WP_VAL")			,"wpn_val_s");
 	ADD(CWeaponVintorez			,CSE_ALifeItemWeaponMagazined	,TEXT2CLSID("WP_VINT")			,"wpn_vintorez_s");
 	ADD(CWeaponWalther			,CSE_ALifeItemWeaponMagazined	,TEXT2CLSID("WP_WALTH")			,"wpn_walther_s");
+
+	ADD(CWeaponDP28, CSE_ALifeItemWeaponMagazined, TEXT2CLSID("WP_DP28"), "wpn_dp28_s");
+
 	ADD(CHairsZone				,CSE_ALifeZoneVisual			,TEXT2CLSID("ZS_BFUZZ")			,"zone_bfuzz_s");
 	ADD(CMosquitoBald			,CSE_ALifeAnomalousZone			,TEXT2CLSID("ZS_MBALD")			,"zone_mbald_s");
 	ADD(CMincer					,CSE_ALifeAnomalousZone			,TEXT2CLSID("ZS_GALAN")			,"zone_galant_s");
