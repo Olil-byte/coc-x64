@@ -16,18 +16,22 @@ public:
 
 	virtual void OnShot();
 
-	virtual void UpdateHudAdditonal(Fmatrix& trans);
+	virtual void UnloadMagazine(bool spawn_ammo = true);
 
 	virtual void OnMotionMark(u32 state, const motion_marks& M);
-	//virtual void OnAnimationEnd(u32 state);
+
+protected:
+	static void _BCL MagazineBoneCallback(CBoneInstance* P);
+	virtual void SetMagazineBoneCallback();
+
+	virtual void UpdateHudAdditonal(Fmatrix& trans);
+	virtual void UpdateHudMagazineRotation();
+
+	virtual void CalculateHudMagazineRotation(float value);
+	virtual void RecalculateHudMagazineRotation();
 
 	virtual void on_a_hud_attach();
 	virtual void on_b_hud_detach();
-
-protected:
-	virtual void UpdateHudMagazineRotation();
-	virtual void CalculateHudMagazineRotation(float value);
-	virtual void RecalculateHudMagazineRotation();
 
 private:
 	shared_str m_sMagazineBone;
