@@ -46,13 +46,36 @@ void CWeaponDP28::UpdateHudMagazineRotation()
 {
 	if (m_fMagazineRotationTime > 0.0f)
 	{
-		Fmatrix rotation;
-		rotation.identity();
-		rotation.rotation(m_vMagazineRotationAxis, m_fMagazineRotationSpeed * Device.fTimeDelta);
-
-		m_mMagazineRotation.mulB_43(rotation);
+		CalculateHudMagazineRotation(m_fMagazineRotationSpeed * Device.fTimeDelta);
 
 		m_fMagazineRotationTime -= Device.fTimeDelta;
+	}
+}
+
+void CWeaponDP28::CalculateHudMagazineRotation(float value)
+{
+	Fmatrix rotation;
+	rotation.identity();
+	rotation.rotation(m_vMagazineRotationAxis, value);
+
+	m_mMagazineRotation.mulB_43(rotation);
+}
+
+void CWeaponDP28::RecalculateHudMagazineRotation()
+{
+	m_fMagazineRotationTime = 0.0f;
+	m_mMagazineRotation.identity();
+
+	CalculateHudMagazineRotation(PI_MUL_2 - m_fMagazineRotationStep * iAmmoElapsed);
+}
+
+void CWeaponDP28::OnMotionMark(u32 state, const motion_marks& M)
+{
+	inherited::OnMotionMark(state, M);
+	if (state == eReload) 
+	{
+		ReloadMagazine();
+		RecalculateHudMagazineRotation();
 	}
 }
 

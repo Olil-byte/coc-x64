@@ -18,11 +18,16 @@ public:
 
 	virtual void UpdateHudAdditonal(Fmatrix& trans);
 
+	virtual void OnMotionMark(u32 state, const motion_marks& M);
+	//virtual void OnAnimationEnd(u32 state);
+
 	virtual void on_a_hud_attach();
 	virtual void on_b_hud_detach();
 
 protected:
 	virtual void UpdateHudMagazineRotation();
+	virtual void CalculateHudMagazineRotation(float value);
+	virtual void RecalculateHudMagazineRotation();
 
 private:
 	shared_str m_sMagazineBone;
