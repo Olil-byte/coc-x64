@@ -5,10 +5,12 @@
 CWeaponDP28::CWeaponDP28(ESoundTypes eSoundType) : inherited(eSoundType)
 {
 	m_sMagazineBone = nullptr;
-	m_fMagazineRotationFactor = 0.0f;
-	m_fMagazineRotationSpeedFactor = 0.0f;
-	m_mMagazineRotation.identity();
+
+	m_fMagazineRotationStep = 0.0f;
+	m_fMagazineRotationSpeed = 0.0f;
 	m_fMagazineRotationTime = 0.0f;
+
+	m_mMagazineRotation.identity();
 }
 
 CWeaponDP28::~CWeaponDP28()
@@ -22,39 +24,35 @@ void CWeaponDP28::Load(LPCSTR section)
 	m_sMagazineBone = pSettings->r_string(section, "magazine_bone");
 	m_vMagazineRotationAxis = pSettings->r_fvector3(section, "magazine_rotate_axis");
 
-	if(pSettings->line_exist(section, "magazine_rotation_factor"))
-	{
-		m_fMagazineRotationFactor = pSettings->r_float(section, "magazine_rotation_factor");
-	}
-	else 
-	{
-		m_fMagazineRotationFactor = PI_MUL_2 / iMagazineSize;
-	}
-
-	m_fMagazineRotationSpeedFactor = pSettings->r_float(section, "magazine_rotation_speed_factor");
+	m_fMagazineRotationStep = PI_MUL_2 / iMagazineSize;
+	m_fMagazineRotationSpeed = pSettings->r_float(section, "magazine_rotation_speed");
 }
 
 void CWeaponDP28::OnShot()
 {
 	inherited::OnShot();
 
-	m_fMagazineRotationTime += 1.0f / m_fMagazineRotationSpeedFactor;
+	m_fMagazineRotationTime += m_fMagazineRotationStep / m_fMagazineRotationSpeed;
 }
 
 void CWeaponDP28::UpdateHudAdditonal(Fmatrix& trans)
 {
 	inherited::UpdateHudAdditonal(trans);
 
-	if (m_fMagazineRotationTime > 0.0f) 
+	UpdateHudMagazineRotation();
+}
+
+void CWeaponDP28::UpdateHudMagazineRotation()
+{
+	if (m_fMagazineRotationTime > 0.0f)
 	{
 		Fmatrix rotation;
 		rotation.identity();
-		rotation.rotation(m_vMagazineRotationAxis, m_fMagazineRotationFactor * m_fMagazineRotationSpeedFactor * Device.fTimeDelta);
+		rotation.rotation(m_vMagazineRotationAxis, m_fMagazineRotationSpeed * Device.fTimeDelta);
 
 		m_mMagazineRotation.mulB_43(rotation);
 
 		m_fMagazineRotationTime -= Device.fTimeDelta;
-		clamp(m_fMagazineRotationTime, 0.0f, FLT_MAX);
 	}
 }
 

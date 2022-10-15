@@ -21,11 +21,14 @@ public:
 	virtual void on_a_hud_attach();
 	virtual void on_b_hud_detach();
 
+protected:
+	virtual void UpdateHudMagazineRotation();
+
 private:
 	shared_str m_sMagazineBone;
 
-	float m_fMagazineRotationFactor;
-	float m_fMagazineRotationSpeedFactor;
+	float m_fMagazineRotationStep;
+	float m_fMagazineRotationSpeed;
 	float m_fMagazineRotationTime;
 
 	Fvector m_vMagazineRotationAxis;
