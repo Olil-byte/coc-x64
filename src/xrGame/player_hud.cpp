@@ -512,6 +512,19 @@ void player_hud::render_hud()
 
 #include "../xrEngine/motion.h"
 
+u32 player_hud::motion_length(const shared_str& anim_name, const CHudItem* hud_item, const CMotionDef*& md)
+{
+	float speed = CalcMotionSpeed(anim_name);
+	attachable_hud_item* pi = find_or_create_hud_item(hud_item);
+	player_hud_motion* pm = pi->m_hand_motions.find_motion(anim_name);
+	if (!pm || !pm->m_animations.size())
+		return						100; // ms TEMPORARY
+	R_ASSERT2(pm,
+		make_string("hudItem model [%s] has no motion with alias [%s]", hud_item->HudSection().c_str(), anim_name.c_str()).c_str()
+	);
+	return motion_length(pm->m_animations[0].mid, md, speed);
+}
+
 u32 player_hud::motion_length(const shared_str& anim_name, const shared_str& hud_name, const CMotionDef*& md)
 {
 	float speed						= CalcMotionSpeed(anim_name);
@@ -656,23 +669,38 @@ void player_hud::update_inertion(Fmatrix& trans)
 	}
 }
 
+attachable_hud_item* player_hud::find_hud_item(const CHudItem* item) const
+{
+	for (auto it = m_pool.begin(); it != m_pool.end(); ++it)
+	{
+		attachable_hud_item* curItem = *it;
+		if (curItem->m_parent_hud_item == item)
+			return curItem;
+	}
+
+	return nullptr;
+}
 
 attachable_hud_item* player_hud::create_hud_item(const shared_str& sect)
 {
-	xr_vector<attachable_hud_item*>::iterator it = m_pool.begin();
-	xr_vector<attachable_hud_item*>::iterator it_e = m_pool.end();
-	for(;it!=it_e;++it)
-	{
-		attachable_hud_item* itm = *it;
-		if(itm->m_sect_name==sect)
-			return itm;
-	}
-	attachable_hud_item* res	= xr_new<attachable_hud_item>(this);
-	res->load					(sect);
-	res->m_hand_motions.load	(m_model, sect);
-	m_pool.push_back			(res);
+	attachable_hud_item* item = xr_new<attachable_hud_item>(this);
+	item->load(sect);
+	item->m_hand_motions.load(m_model, sect);
+	m_pool.push_back(item);
 
-	return	res;
+	return	item;
+}
+
+attachable_hud_item* player_hud::find_or_create_hud_item(const CHudItem* item)
+{
+	if (attachable_hud_item* curItem = find_hud_item(item))
+	{
+		return curItem;
+	}
+	else 
+	{
+		return create_hud_item(item->HudSection());
+	}
 }
 
 bool player_hud::allow_activation(CHudItem* item)
@@ -685,7 +713,7 @@ bool player_hud::allow_activation(CHudItem* item)
 
 void player_hud::attach_item(CHudItem* item)
 {
-	attachable_hud_item* pi			= create_hud_item(item->HudSection());
+	attachable_hud_item* pi			= find_or_create_hud_item(item);
 	int item_idx					= pi->m_attach_place_idx;
 	
 	if(	m_attached_items[item_idx] != pi)

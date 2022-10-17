@@ -333,7 +333,7 @@ u32 CHudItem::PlayHUDMotion_noCB(const shared_str& motion_name, BOOL bMixIn)
     else
     {
         m_started_rnd_anim_idx = 0;
-        return g_player_hud->motion_length(motion_name, HudSection(), m_current_motion_def);
+        return g_player_hud->motion_length(motion_name, this, m_current_motion_def);
     }
 }
 
@@ -412,7 +412,7 @@ bool CHudItem::HudAnimationExist(LPCSTR anim_name)
     }
     else // Third person
     {
-        if (g_player_hud->motion_length(anim_name, HudSection(), m_current_motion_def) > 100)
+        if (g_player_hud->motion_length(anim_name, this, m_current_motion_def) > 100)
             return true;
 
     }

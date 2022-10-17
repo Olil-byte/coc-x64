@@ -108,7 +108,9 @@ public:
 	u32				anim_play			(u16 part, const MotionID& M, BOOL bMixIn, const CMotionDef*& md, float speed);
 	const shared_str& section_name		() const {return m_sect_name;}
 
+	attachable_hud_item* find_hud_item(const CHudItem* item) const;
 	attachable_hud_item* create_hud_item(const shared_str& sect);
+	attachable_hud_item* find_or_create_hud_item(const CHudItem* item);
 
 	void			attach_item			(CHudItem* item);
 	bool			allow_activation	(CHudItem* item);
@@ -120,7 +122,8 @@ public:
 	void			calc_transform		(u16 attach_slot_idx, const Fmatrix& offset, Fmatrix& result);
 	void			tune				(Ivector values);
 	u32				motion_length		(const MotionID& M, const CMotionDef*& md, float speed);
-	u32				motion_length		(const shared_str& anim_name, const shared_str& hud_name, const CMotionDef*& md);
+	u32				motion_length		(const shared_str& anim_name, const shared_str& hud_name, const CMotionDef*& md);//Don't use!
+	u32				motion_length(const shared_str& anim_name, const CHudItem* hud_item, const CMotionDef*& md);
 	void			OnMovementChanged	(ACTOR_DEFS::EMoveCommand cmd)	;
 private:
 	void			update_inertion		(Fmatrix& trans);
