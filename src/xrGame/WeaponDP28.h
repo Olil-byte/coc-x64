@@ -23,12 +23,15 @@ public:
 protected:
 	static void _BCL MagazineBoneCallback(CBoneInstance* P);
 	virtual void SetMagazineBoneCallback();
+	virtual void ResetMagazineBoneCallback();
+
+	virtual void renderable_Render();
 
 	virtual void UpdateHudAdditonal(Fmatrix& trans);
 	virtual void UpdateHudMagazineRotation();
 
-	virtual void CalculateHudMagazineRotation(float value);
-	virtual void RecalculateHudMagazineRotation();
+	virtual void CalculateMagazineRotation(float value);
+	virtual void RecalculateMagazineRotation();
 
 	virtual void on_a_hud_attach();
 	virtual void on_b_hud_detach();

@@ -44,6 +44,16 @@ void CWeaponDP28::SetMagazineBoneCallback()
 	magazineBone.set_callback(bctCustom, &MagazineBoneCallback, &m_mMagazineRotation);
 }
 
+void CWeaponDP28::ResetMagazineBoneCallback()
+{
+	attachable_hud_item* hi = HudItemData();
+
+	u16 boneId = hi->m_model->LL_BoneID(m_sMagazineBone);
+	CBoneInstance& magazineBone = hi->m_model->LL_GetBoneInstance(boneId);
+
+	magazineBone.reset_callback();
+}
+
 void CWeaponDP28::OnShot()
 {
 	inherited::OnShot();
@@ -54,7 +64,7 @@ void CWeaponDP28::OnShot()
 void CWeaponDP28::UnloadMagazine(bool spawn_ammo)
 {
 	inherited::UnloadMagazine(spawn_ammo);
-	RecalculateHudMagazineRotation();
+	RecalculateMagazineRotation();
 }
 
 void CWeaponDP28::OnMotionMark(u32 state, const motion_marks& M)
@@ -63,7 +73,23 @@ void CWeaponDP28::OnMotionMark(u32 state, const motion_marks& M)
 	if (state == eReload)
 	{
 		ReloadMagazine();
-		RecalculateHudMagazineRotation();
+		RecalculateMagazineRotation();
+	}
+}
+
+void CWeaponDP28::renderable_Render()
+{
+	inherited::renderable_Render();
+	RecalculateMagazineRotation();
+
+	if (IKinematics* worldVisual = smart_cast<IKinematics*>(Visual())) 
+	{
+		u16 boneId = worldVisual->LL_BoneID(m_sMagazineBone);
+		CBoneInstance& magazineBone = worldVisual->LL_GetBoneInstance(boneId);
+		CBoneData& magazineBoneData = worldVisual->LL_GetData(boneId);
+
+		magazineBone.mTransform.mulB_43(m_mMagazineRotation);
+		magazineBone.mRenderTransform.mul_43(magazineBone.mTransform, magazineBoneData.m2b_transform);
 	}
 }
 
@@ -76,17 +102,15 @@ void CWeaponDP28::UpdateHudAdditonal(Fmatrix& trans)
 
 void CWeaponDP28::UpdateHudMagazineRotation()
 {
-	SetMagazineBoneCallback();
-
 	if (m_fMagazineRotationTime > 0.0f)
 	{
-		CalculateHudMagazineRotation(m_fMagazineRotationSpeed * Device.fTimeDelta);
+		CalculateMagazineRotation(m_fMagazineRotationSpeed * Device.fTimeDelta);
 
 		m_fMagazineRotationTime -= Device.fTimeDelta;
 	}
 }
 
-void CWeaponDP28::CalculateHudMagazineRotation(float value)
+void CWeaponDP28::CalculateMagazineRotation(float value)
 {
 	Fmatrix rotation;
 	rotation.identity();
@@ -95,27 +119,22 @@ void CWeaponDP28::CalculateHudMagazineRotation(float value)
 	m_mMagazineRotation.mulB_43(rotation);
 }
 
-void CWeaponDP28::RecalculateHudMagazineRotation()
+void CWeaponDP28::RecalculateMagazineRotation()
 {
 	m_fMagazineRotationTime = 0.0f;
 	m_mMagazineRotation.identity();
 
-	CalculateHudMagazineRotation(PI_MUL_2 - m_fMagazineRotationStep * iAmmoElapsed);
+	CalculateMagazineRotation(PI_MUL_2 - m_fMagazineRotationStep * iAmmoElapsed);
 }
 
 void CWeaponDP28::on_a_hud_attach()
 {
 	inherited::on_a_hud_attach();
+	SetMagazineBoneCallback();
 }
 
 void CWeaponDP28::on_b_hud_detach()
 {
 	inherited::on_b_hud_detach();
-
-	attachable_hud_item* hi = HudItemData();
-
-	u16 boneId = hi->m_model->LL_BoneID(m_sMagazineBone);
-	CBoneInstance& magazineBone = hi->m_model->LL_GetBoneInstance(boneId);
-
-	magazineBone.reset_callback();
+	ResetMagazineBoneCallback();
 }
