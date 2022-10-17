@@ -30,26 +30,48 @@ void CWeaponDP28::Load(LPCSTR section)
 
 void _BCL CWeaponDP28::MagazineBoneCallback(CBoneInstance* P)
 {
-	Fmatrix* rotation = static_cast<Fmatrix*>(P->callback_param());
-	P->mTransform.mulB_43(*rotation);
+	CWeaponDP28* weapon = static_cast<CWeaponDP28*>(P->callback_param());
+	P->mTransform.mulB_43(weapon->m_mMagazineRotation);
 }
 
 void CWeaponDP28::SetMagazineBoneCallback()
 {
-	attachable_hud_item* hi = HudItemData();
+	IKinematics* worldVisual = smart_cast<IKinematics*>(Visual());
 
-	u16 boneId = hi->m_model->LL_BoneID(m_sMagazineBone);
-	CBoneInstance& magazineBone = hi->m_model->LL_GetBoneInstance(boneId);
+	u16 boneId = worldVisual->LL_BoneID(m_sMagazineBone);
+	CBoneInstance& magazineBone = worldVisual->LL_GetBoneInstance(boneId);
 
-	magazineBone.set_callback(bctCustom, &MagazineBoneCallback, &m_mMagazineRotation);
+	magazineBone.set_callback(bctCustom, &MagazineBoneCallback, this);
 }
 
 void CWeaponDP28::ResetMagazineBoneCallback()
 {
-	attachable_hud_item* hi = HudItemData();
+	IKinematics* worldVisual = smart_cast<IKinematics*>(Visual());
 
-	u16 boneId = hi->m_model->LL_BoneID(m_sMagazineBone);
-	CBoneInstance& magazineBone = hi->m_model->LL_GetBoneInstance(boneId);
+	u16 boneId = worldVisual->LL_BoneID(m_sMagazineBone);
+	CBoneInstance& magazineBone = worldVisual->LL_GetBoneInstance(boneId);
+
+	magazineBone.reset_callback();
+}
+
+void CWeaponDP28::SetHudMagazineBoneCallback()
+{
+	attachable_hud_item* hudItem = HudItemData();
+	IKinematics* hudVisual = hudItem->m_model;
+
+	u16 boneId = hudVisual->LL_BoneID(m_sMagazineBone);
+	CBoneInstance& magazineBone = hudVisual->LL_GetBoneInstance(boneId);
+
+	magazineBone.set_callback(bctCustom, &MagazineBoneCallback, this);
+}
+
+void CWeaponDP28::ResetHudMagazineBoneCallback()
+{
+	attachable_hud_item* hudItem = HudItemData();
+	IKinematics* hudVisual = hudItem->m_model;
+
+	u16 boneId = hudVisual->LL_BoneID(m_sMagazineBone);
+	CBoneInstance& magazineBone = hudVisual->LL_GetBoneInstance(boneId);
 
 	magazineBone.reset_callback();
 }
@@ -77,30 +99,21 @@ void CWeaponDP28::OnMotionMark(u32 state, const motion_marks& M)
 	}
 }
 
-void CWeaponDP28::renderable_Render()
+void CWeaponDP28::UpdateCL()
 {
-	inherited::renderable_Render();
-	RecalculateMagazineRotation();
+	inherited::UpdateCL();
 
-	if (IKinematics* worldVisual = smart_cast<IKinematics*>(Visual())) 
-	{
-		u16 boneId = worldVisual->LL_BoneID(m_sMagazineBone);
-		CBoneInstance& magazineBone = worldVisual->LL_GetBoneInstance(boneId);
-		CBoneData& magazineBoneData = worldVisual->LL_GetData(boneId);
+	UpdateMagazineRotation();
 
-		magazineBone.mTransform.mulB_43(m_mMagazineRotation);
-		magazineBone.mRenderTransform.mul_43(magazineBone.mTransform, magazineBoneData.m2b_transform);
-	}
+	//IKinematics* worldVisual = smart_cast<IKinematics*>(Visual());
+
+	//u16 boneId = worldVisual->LL_BoneID(m_sMagazineBone);
+	//CBoneInstance& magazineBone = worldVisual->LL_GetBoneInstance(boneId);
+
+	//magazineBone.set_callback(bctCustom, &MagazineBoneCallback, this);
 }
 
-void CWeaponDP28::UpdateHudAdditonal(Fmatrix& trans)
-{
-	inherited::UpdateHudAdditonal(trans);
-
-	UpdateHudMagazineRotation();
-}
-
-void CWeaponDP28::UpdateHudMagazineRotation()
+void CWeaponDP28::UpdateMagazineRotation()
 {
 	if (m_fMagazineRotationTime > 0.0f)
 	{
@@ -127,14 +140,55 @@ void CWeaponDP28::RecalculateMagazineRotation()
 	CalculateMagazineRotation(PI_MUL_2 - m_fMagazineRotationStep * iAmmoElapsed);
 }
 
-void CWeaponDP28::on_a_hud_attach()
+BOOL CWeaponDP28::net_Spawn(CSE_Abstract* DC)
+{
+	BOOL bResult = inherited::net_Spawn(DC);
+
+	RecalculateMagazineRotation();
+
+	SetMagazineBoneCallback();
+
+	return bResult;
+}
+
+void CWeaponDP28::net_Destroy()
+{
+	ResetMagazineBoneCallback();
+	inherited::net_Destroy();
+}
+
+void CWeaponDP28::OnH_B_Chield()
+{
+	inherited::OnH_B_Chield();
+	ResetMagazineBoneCallback();
+}
+
+void CWeaponDP28::OnH_A_Chield()
+{
+	inherited::OnH_A_Chield();
+	SetMagazineBoneCallback();
+}
+
+void CWeaponDP28::OnH_B_Independent(bool just_before_destroy)
+{
+	inherited::OnH_B_Independent(just_before_destroy);
+	ResetMagazineBoneCallback();
+}
+
+void CWeaponDP28::OnH_A_Independent()
+{
+	inherited::OnH_A_Independent();
+	SetMagazineBoneCallback();
+}
+
+void CWeaponDP28::on_a_hud_attach() 
 {
 	inherited::on_a_hud_attach();
-	SetMagazineBoneCallback();
+	SetHudMagazineBoneCallback();
 }
 
 void CWeaponDP28::on_b_hud_detach()
 {
 	inherited::on_b_hud_detach();
-	ResetMagazineBoneCallback();
+	ResetHudMagazineBoneCallback();
 }

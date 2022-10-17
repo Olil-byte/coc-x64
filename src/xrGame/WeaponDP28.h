@@ -22,16 +22,27 @@ public:
 
 protected:
 	static void _BCL MagazineBoneCallback(CBoneInstance* P);
+
 	virtual void SetMagazineBoneCallback();
 	virtual void ResetMagazineBoneCallback();
 
-	virtual void renderable_Render();
+	virtual void SetHudMagazineBoneCallback();
+	virtual void ResetHudMagazineBoneCallback();
 
-	virtual void UpdateHudAdditonal(Fmatrix& trans);
-	virtual void UpdateHudMagazineRotation();
+	virtual void UpdateCL();
+	virtual void UpdateMagazineRotation();
 
 	virtual void CalculateMagazineRotation(float value);
 	virtual void RecalculateMagazineRotation();
+
+	virtual BOOL net_Spawn(CSE_Abstract* DC);
+	virtual void net_Destroy();
+
+	virtual void OnH_B_Chield();
+	virtual void OnH_A_Chield();
+
+	virtual void OnH_B_Independent(bool just_before_destroy);
+	virtual void OnH_A_Independent();
 
 	virtual void on_a_hud_attach();
 	virtual void on_b_hud_detach();
