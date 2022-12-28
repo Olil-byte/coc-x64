@@ -25,7 +25,7 @@ void CWeaponDP28::Load(LPCSTR section)
 	m_vMagazineRotationAxis = pSettings->r_fvector3(section, "magazine_rotate_axis");
 
 	m_fMagazineRotationStep = PI_MUL_2 / iMagazineSize;
-	m_fMagazineRotationSpeed = pSettings->r_float(section, "magazine_rotation_speed");
+	m_fMagazineRotationSpeed = m_fMagazineRotationStep / fOneShotTime;
 }
 
 void _BCL CWeaponDP28::MagazineBoneCallback(CBoneInstance* P)
@@ -104,13 +104,6 @@ void CWeaponDP28::UpdateCL()
 	inherited::UpdateCL();
 
 	UpdateMagazineRotation();
-
-	//IKinematics* worldVisual = smart_cast<IKinematics*>(Visual());
-
-	//u16 boneId = worldVisual->LL_BoneID(m_sMagazineBone);
-	//CBoneInstance& magazineBone = worldVisual->LL_GetBoneInstance(boneId);
-
-	//magazineBone.set_callback(bctCustom, &MagazineBoneCallback, this);
 }
 
 void CWeaponDP28::UpdateMagazineRotation()
