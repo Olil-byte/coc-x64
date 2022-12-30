@@ -226,3 +226,6 @@
 #define CLSID_GAME_UI_CAPTURETHEARTEFACT	MK_CLSID('U','I','_','C','T','A',' ',' ')
 
 #define CLSID_ONLINE_OFFLINE_GROUP		MK_CLSID('O','N','_','O','F','F','_','G')
+
+// Uran weapons
+#define CLSID_BOX_MAGAZINE MK_CLSID('W','_','B','O','X','M','A','G')

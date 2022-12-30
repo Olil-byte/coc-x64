@@ -181,6 +181,10 @@
 #	include "smart_cover_object.h"
 
 #include "..\xrGame\HolderEntityObject.h"
+
+// Uran
+#include "BoxMagazine.h"
+
 #endif // NO_XR_GAME
 
 #ifndef NO_XR_GAME
@@ -419,6 +423,9 @@ void CObjectFactory::register_classes	()
 #ifndef NO_SINGLE
 	ADD(smart_cover::object		,CSE_SmartCover					,TEXT2CLSID("SMRTCOVR")			,"smart_cover");
 #endif // #ifndef NO_SINGLE
+
+	// Uran weapons
+	ADD(BoxMagazine, CSE_ALifeItem, CLSID_BOX_MAGAZINE, "box_magazine");
 
 #ifndef NO_XR_GAME
 	// hack, for dedicated server only

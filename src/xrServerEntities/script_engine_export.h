@@ -153,4 +153,8 @@
 #	include "account_manager.h"
 #	include	"profile_store.h"
 #	include	"profile_data_types.h"
+
+//Uran weapons
+#include "BoxMagazine.h"
+
 #endif

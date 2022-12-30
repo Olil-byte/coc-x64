@@ -2494,6 +2494,9 @@
     <Filter Include="UI\Common\PDA\Encylopedia">
       <UniqueIdentifier>{73dc453e-a9d1-4200-83b7-3564dbf9fc80}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Weapons">
+      <UniqueIdentifier>{ea1ae822-e3a2-4513-894e-11496431b009}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mt_config.h">
@@ -7384,6 +7387,13 @@
       <Filter>Core\Client\Objects\zones\Ameba</Filter>
     </ClInclude>
     <ClInclude Include="HolderEntityObject.h" />
+    <ClInclude Include="WeaponDP28.h" />
+    <ClInclude Include="MagazineBase.h">
+      <Filter>Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="BoxMagazine.h">
+      <Filter>Weapons</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="damage_manager.cpp">
@@ -11035,6 +11045,14 @@
       <Filter>Core\Client\Objects\zones\Ameba</Filter>
     </ClCompile>
     <ClCompile Include="HolderEntityObject.cpp" />
+    <ClCompile Include="WeaponDP28.cpp" />
+    <ClCompile Include="WeaponDP28_script.cpp" />
+    <ClCompile Include="MagazineBase.cpp">
+      <Filter>Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="BoxMagazine.cpp">
+      <Filter>Weapons</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="ai\monsters\chimera\chimera_attack_state.h">

@@ -449,7 +449,7 @@
       <BrowseInformation />
       <WarningLevel>Level4</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <DebugInformationFormat>None</DebugInformationFormat>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <DisableSpecificWarnings>4995;4005;4237;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <UndefinePreprocessorDefinitions>USE_LUAJIT_ONE</UndefinePreprocessorDefinitions>
@@ -470,6 +470,7 @@
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <ImportLibrary>$(xrLibDir)$(TargetName).lib</ImportLibrary>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -506,7 +507,7 @@
       </BrowseInformation>
       <WarningLevel>Level4</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <DisableSpecificWarnings>4995;4005;4237;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <UndefinePreprocessorDefinitions>USE_LUAJIT_ONE</UndefinePreprocessorDefinitions>
@@ -527,9 +528,9 @@
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <ImportLibrary>$(xrLibDir)$(TargetName).lib</ImportLibrary>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
       <GenerateMapFile>false</GenerateMapFile>
       <MapExports>false</MapExports>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_NEW|Win32'">
@@ -1370,6 +1371,7 @@
     <ClInclude Include="bone_groups.h" />
     <ClInclude Include="bone_utils.h" />
     <ClInclude Include="BottleItem.h" />
+    <ClInclude Include="BoxMagazine.h" />
     <ClInclude Include="BreakableObject.h" />
     <ClInclude Include="builder_allocator_constructor.h" />
     <ClInclude Include="builder_allocator_constructor_inline.h" />
@@ -1698,6 +1700,7 @@
     <ClInclude Include="location_manager.h" />
     <ClInclude Include="location_manager_inline.h" />
     <ClInclude Include="login_manager.h" />
+    <ClInclude Include="MagazineBase.h" />
     <ClInclude Include="magic_box3.h" />
     <ClInclude Include="magic_box3_inline.h" />
     <ClInclude Include="magic_minimize_1d.h" />
@@ -3063,6 +3066,7 @@
     <ClCompile Include="BoneProtections.cpp" />
     <ClCompile Include="bone_groups.cpp" />
     <ClCompile Include="BottleItem.cpp" />
+    <ClCompile Include="BoxMagazine.cpp" />
     <ClCompile Include="BreakableObject.cpp" />
     <ClCompile Include="CameraEffector.cpp" />
     <ClCompile Include="CameraFirstEye.cpp" />
@@ -3505,6 +3509,7 @@
     <ClCompile Include="location_manager.cpp" />
     <ClCompile Include="login_manager.cpp" />
     <ClCompile Include="login_manager_script.cpp" />
+    <ClCompile Include="MagazineBase.cpp" />
     <ClCompile Include="magic_box3.cpp" />
     <ClCompile Include="magic_minimize_1d.cpp" />
     <ClCompile Include="MainMenu.cpp" />
